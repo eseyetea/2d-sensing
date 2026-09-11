@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "2d-sensing"
+version = "0.1.0"
+description = "Measurement and analysis scripts for 2D RF samples."
+requires-python = ">=3.11"
+dependencies = [
+    "qcodes",
+    "matplotlib",
+    "numpy",
+    "ipympl"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "mypy"]
+
+[project.scripts]
+log-mxc = "your_lab_package.cli:main"
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
